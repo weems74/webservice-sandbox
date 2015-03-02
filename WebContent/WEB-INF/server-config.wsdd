@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -50,11 +50,11 @@
    <ns1:parameter qname="ns2:name" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="helloName"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Hello"/>
-  <ns1:parameter name="className" value="net.mckinleyranch.Hello"/>
-  <ns1:parameter name="wsdlServicePort" value="Hello"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://mckinleyranch.net"/>
+  <ns1:parameter name="wsdlServicePort" value="Hello"/>
+  <ns1:parameter name="className" value="net.mckinleyranch.Hello"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mckinleyranch.net"/>
   <ns1:parameter name="wsdlServiceElement" value="HelloService"/>
  </ns1:service>
