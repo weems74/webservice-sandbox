@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mckinleyranch.net" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mckinleyranch.net" xmlns:intf="http://mckinleyranch.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://mckinleyranch.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="englishToPigLatin">
+    <complexType>
+     <sequence>
+      <element name="englishSentence" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="englishToPigLatinResponse">
+    <complexType>
+     <sequence>
+      <element name="englishToPigLatinReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="englishToPigLatinResponse">
+
+      <wsdl:part element="impl:englishToPigLatinResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="englishToPigLatinRequest">
+
+      <wsdl:part element="impl:englishToPigLatin" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="PigLatinService">
+
+      <wsdl:operation name="englishToPigLatin">
+
+         <wsdl:input message="impl:englishToPigLatinRequest" name="englishToPigLatinRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:englishToPigLatinResponse" name="englishToPigLatinResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="PigLatinServiceSoapBinding" type="impl:PigLatinService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="englishToPigLatin">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="englishToPigLatinRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="englishToPigLatinResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="PigLatinServiceService">
+
+      <wsdl:port binding="impl:PigLatinServiceSoapBinding" name="PigLatinService">
+
+         <wsdlsoap:address location="http://localhost:8080/service-example/services/PigLatinService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

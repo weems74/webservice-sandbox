@@ -1,0 +1,29 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from PigLatinServiceService WSDL service -->
+
+  <service name="PigLatinService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://mckinleyranch.net"/>
+      <parameter name="wsdlServiceElement" value="PigLatinServiceService"/>
+      <parameter name="schemaQualified" value="http://mckinleyranch.net"/>
+      <parameter name="wsdlServicePort" value="PigLatinService"/>
+      <parameter name="className" value="net.mckinleyranch.PigLatinServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="PigLatinService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="englishToPigLatin" qname="operNS:englishToPigLatin" xmlns:operNS="http://mckinleyranch.net" returnQName="retNS:englishToPigLatinReturn" xmlns:retNS="http://mckinleyranch.net" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:englishSentence" xmlns:pns="http://mckinleyranch.net" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="englishToPigLatin"/>
+
+  </service>
+</deployment>
