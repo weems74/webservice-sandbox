@@ -19,7 +19,7 @@ public class PigLatinServiceTest {
 		
 		System.out.println("Test Phrase translation = " + testPhrase);
 		
-		assertTrue("FAIL: Translator not working correctly", testPhrase.contains("Iway amway away ebway ervicesay"));
+		assertTrue("FAIL: Translator not working correctly", testPhrase.contains("histay ebway ervicesay ocksray"));
 		
 	}
 
